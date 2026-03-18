@@ -9,6 +9,19 @@ import cv2
 print(cv2.__version__)  
 import math
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 img=cv2.imread("image.jpg",0) 
 res=cv2.imread ("imgrgb.jpg",0)
 gray=img
@@ -41,6 +54,22 @@ plt.imshow(gn, cmap='gray')
 plt.title("Grayscale Image")
 plt.axis('off')
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def nearest_neighbor_resize(img, new_h, new_w):
     h, w = img.shape
@@ -80,6 +109,32 @@ plt.title("Grayscale Image")
 plt.show() 
 
 print(zoom_out.shape)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def bilinear_resize(img, new_h, new_w):
     h, w = img.shape
@@ -139,12 +194,51 @@ plt.title("Bilinear Zoom Out")
 
 plt.show()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 subtraction = np.clip(img - res, 0, 255).astype(np.uint8)
 
 plt.imshow(subtraction)
 plt.title("Subtraction Image")
 plt.axis("off")
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def gray_level_resolution(img, bits):
     L = 2 ** bits         
@@ -182,6 +276,32 @@ plt.axis('off')
 
 plt.show()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #NEGATIVE TRANSFORMATION
 image_neg = 255 - img 
 plt.imshow(image_neg,cmap='gray')
@@ -200,6 +320,32 @@ plt.title("Logarithmic Transform")
 plt.axis("off")
 plt.show()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #POWER?GAMMA TRANSFORMATION
 
 image_norm = img/255
@@ -212,6 +358,32 @@ plt.imshow(image_gamma, cmap='gray')
 plt.title("Power Transform")
 plt.axis("off")
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #CONTRAST STRETCHING
 def piecewise_contrast_loop(img, a, b, alpha, beta, gamma):
@@ -327,6 +499,32 @@ plt.axis('off')
 
 plt.show()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bit_planes = []
 
 for k in range(8):
@@ -345,6 +543,32 @@ for k in range(8):
 
 plt.tight_layout()
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #gray slicing
 def gray_slice_with_bg(img, A, B):
@@ -381,6 +605,32 @@ plt.title("Slicing")
 plt.axis('off')
 
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -453,6 +703,32 @@ plt.hist(equalized.ravel(), bins=256)
 plt.title("Equalized Histogram")
 
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #hist match
 def histogram_specification(source, target):
@@ -535,6 +811,32 @@ plt.title("Matched")
 plt.axis('off')
 
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 h, w = img.shape
 output = np.zeros_like(img)
@@ -631,6 +933,32 @@ plt.subplot(1,2,1); plt.title("Original"); plt.imshow(img, cmap="gray")
 plt.subplot(1,2,2); plt.title("CLAHE with Interpolation"); plt.imshow(output, cmap="gray")
 plt.show()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def add_salt_and_pepper(image, prob=0.05):
 
     output = np.copy(image)
@@ -692,6 +1020,32 @@ plt.axis("off")
 
 plt.tight_layout()
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def manual_convolve(image, kernel):
     h, w = image.shape
